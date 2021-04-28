@@ -1,0 +1,36 @@
+
+.login_page_container {
+
+  .login_form_container {
+    padding: 20px;
+    
+    
+
+    form {
+
+      input {
+        width: 100%;
+        outline: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        padding: 13px;
+        height: 56px;
+        border: 2px solid #f3f4f5;
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+
+      input::placeholder {
+        color: grey;
+      }
+
+      .login_btn {
+        color: white;
+        cursor: pointer;
+        background: #6b21a8;
+      }
+    }
+  }
+}

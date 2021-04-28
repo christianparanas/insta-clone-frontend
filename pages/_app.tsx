@@ -1,6 +1,8 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
 
 import '../styles/globals.scss'
+// client
+import '../styles/client/login.scss'
 
 
 
