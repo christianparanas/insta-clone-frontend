@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 
 .login_page_container {
 
   .login_form_container {
-    padding: 20px;
+    padding: 50px 20px 20px;
     
+    .login_form_head {
+      width: 100%;
+      font-size: 40px;
+      font-family: 'Fredoka One', cursive;
+      text-align: center;
+      margin-bottom: 40px;
+    }
     
     form {
 
@@ -29,7 +38,80 @@
         color: white;
         cursor: pointer;
         background: #6b21a8;
+        
       }
+    }
+
+    .loginWithGoogle {
+
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      position: relative;
+ 
+      width: 100%;
+      outline: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 20px;
+      padding: 13px;
+      height: 56px;
+      border: 2px solid #f3f4f5;
+      box-sizing: border-box;
+      border-radius: 8px;
+
+
+      svg {
+        height: 20px; 
+        width: 20px; 
+        display: block;
+        position: absolute;
+        left: 12px;
+      }
+
+      .text {
+        width: 100%;
+        display: grid;
+        place-items: center;
+      }
+    }
+
+		.orSep {
+
+			display: grid;
+			grid-template-columns: 1fr 50px 1fr;
+			margin: 20px 0;
+
+			.or {
+				text-align: center;
+			}
+
+			span {
+				border-bottom: 1px solid #e8e8e1;
+				margin-bottom: 6px;
+			}
+		}
+
+    .createAcctBtn {
+      cursor: pointer;
+      width: 100%;
+      color: #6b21a8;
+      text-align: center;
+      background: #fff;
+      font-size: 1em;
+      outline: 0;
+      border: 2px solid #6b21a8;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+      margin-bottom: 30px;
+      padding: 13px;
+      height: 56px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
