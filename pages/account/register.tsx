@@ -6,7 +6,9 @@ export default function register() {
       <div className="login_page_container">
         <div className="login_form_container">
           <form>
-            <input type="text" placeholder="Username or Email" />
+            <input type="text" placeholder="Username" />
+				<input type="text" placeholder="Full name" />
+				<input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <input className="register_btn" type="submit" value="register" />
           </form>
