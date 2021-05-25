@@ -15,6 +15,7 @@ export default function Home() {
       <div className="home_container">
         <Nav />
 
+        dad
       </div>
     </div>
   )
