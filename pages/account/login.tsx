@@ -6,7 +6,9 @@ export default function login() {
     <>
       <div className="login_page_container">
         <div className="login_form_container">
-          <div className="login_form_head">InstaClone</div>
+          <div className="login_form_head">
+            <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="" />
+          </div>
           <form>
             <input type="text" placeholder="Username or Email" />
             <input type="password" placeholder="Password" />

@@ -3,7 +3,10 @@
 import '../styles/globals.scss'
 
 // client scss
-import '../styles/client/login.scss'
+import '../styles/client/home.scss'
+import '../styles/client/nav.scss'
+
+import '../styles/client/auth.scss'
 
 
 
