@@ -1,0 +1,60 @@
+
+.container {
+
+
+
+	.home_container {
+
+
+
+		.home_stories_container {
+			background: #fafafa;
+			height: 105px;
+			padding: 10px;
+			border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+
+
+			.home_user_add_story {
+
+				.img_btn {
+					width: fit-content;
+					position: relative;
+
+					img {
+						width: 56px;
+						height: 56px;
+						border-radius: 50%;
+					}
+
+					svg {
+						position: absolute;
+						top: 40px;
+						right: 3px;
+					}
+				}
+
+				p {
+					font-size: 12px;
+					margin-top: 5px;
+				}
+
+				form {
+					margin: 0;
+			    padding: 0;
+			    border: 0;
+			    font: inherit;
+			    vertical-align: baseline;
+
+			    input {
+			    	display: none;
+			    }
+
+			    input::-webkit-file-upload-button {
+			    	display: none; 
+
+			    }
+				}
+			}
+		}
+	}
+}
