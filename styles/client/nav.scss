@@ -1,11 +1,10 @@
 
 
-
 .nav_container {
 	
 
 	.top_nav_container {
-		position: relative;
+		position: fixed;
 		display: flex;
 		-webkit-box-align: center;
     -webkit-align-items: center;
@@ -23,6 +22,14 @@
     justify-content: space-between;
     padding: 0 16px;
     width: 100%;
+    background: #fff;
+    z-index: 20;
+
+    .logo_container {
+    	display: flex;
+    	align-items: center; 
+    }
+
 
 
 		&::before {
@@ -44,6 +51,8 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		height: 45px;
+		background: #fff;
+		z-index: 20; 
 
 
     .nav_bottom_btn {

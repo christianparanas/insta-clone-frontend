@@ -1,0 +1,59 @@
+
+
+
+.post__container {
+
+
+	.post__header {
+		display: flex;
+		justify-content: space-between;
+		padding: 16px;
+
+		.post__user_details {
+			display: flex;
+			align-items: center;
+
+			img {
+				width: 32px;
+				height: 32px;
+			}
+
+			.post__username {
+				margin-left: 12px;
+				font-size: 14px;
+			}
+		}
+
+		.post__option {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+
+	.post__content {
+
+	
+		.post__main_content {
+
+
+			img {
+				width: 100%;
+			}
+		}	
+
+		.post__interact_btns {
+			display: flex;
+			justify-content: space-between;
+			padding: 16px;
+
+			.post__interact_btns_left {
+				display: flex;
+
+				.post__comment_btn, .post__share_btn {
+					margin-left: 12px;
+				}
+			}
+		}
+	}
+}
