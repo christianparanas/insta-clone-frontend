@@ -1,5 +1,3 @@
-
-
 import '../styles/globals.scss'
 
 // client scss

@@ -4,11 +4,6 @@ import { useState, useEffect } from 'react'
 export default function Post({ props }) {
 	const { user_name, user_img, post_imgs, post_likes } = props;
 
-	useEffect(() => {
-		console.log(props)
-
-	}, [])
-
 	return (
 		<>
 			<div className="post__container">
