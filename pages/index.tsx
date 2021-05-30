@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState, useRef, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import axios from 'axios' 
+import useSWR from 'swr'
 
 
 // components
@@ -14,16 +15,11 @@ import StoryBtn from '../components/StoryBtn'
 export default function Home() {
   const fileInput = useRef(null);
 
-  const [post_arr, setPost_arr] = useState([])
-  const [fetchStatus, setFetchStatus] = useState('isLoading')
+  // fetcher function
+  const fetcher = url => axios.get(url).then(res => res.data)
 
-  const fetchPosts = () => {
-    axios.get('/api/post')
-      .then((res) => {
-        setPost_arr(res.data)
-        setFetchStatus('success')
-    })
-  }
+  // api call
+  const { data: post_arr, error: post_arr_Error } = useSWR('/api/post', fetcher)
 
   // media queries
   const isDesktopOrLaptop = useMediaQuery({
@@ -41,13 +37,9 @@ export default function Home() {
   }
 
 
-  useEffect(() => {
-    fetchPosts()
 
-  }, [])
-
-
-  if(fetchStatus == 'isLoading') return null
+  if (!post_arr) return <div>loading...</div>
+  if (post_arr_Error) return <div>Error</div>
 
   return (
     <div className="container">
@@ -63,8 +55,7 @@ export default function Home() {
       {isMobile && <>
         <Nav />
         <div className="home_container">
-          
-
+  
           <div className="home_stories_container">
             <div onClick={open_addStory_fileInput_dialog} className="home_user_add_story">
               <div className="img_btn">
@@ -77,14 +68,13 @@ export default function Home() {
               </form>
             </div>
 
-
           {post_arr.map((val, key) => {
             return (
               <div key={key}>
                 <StoryBtn props={val} />
               </div>
             )
-          })}
+          })}}
           </div>
 
           {post_arr.map((value, key) => {
@@ -93,10 +83,9 @@ export default function Home() {
                 <Post props={value} />
               </div>
             )
-          })}
+          })}}
         </div>
       </>}
-      
     </div>
   )
 }
