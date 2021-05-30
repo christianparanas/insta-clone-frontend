@@ -74,7 +74,7 @@ export default function Home() {
                 <StoryBtn props={val} />
               </div>
             )
-          })}}
+          })}
           </div>
 
           {post_arr.map((value, key) => {
@@ -83,7 +83,7 @@ export default function Home() {
                 <Post props={value} />
               </div>
             )
-          })}}
+          })}
         </div>
       </>}
     </div>
