@@ -1,39 +1,54 @@
 import { useState } from 'react'
 import { useForm } from "react-hook-form";
-import FileBase from 'react-file-base64'
-
 
 
 export default function create() {
 
 	const [postImgData, setPostImgData] = useState([])
-                                                                                                                             
 
-	const handleSubmit = (event) => {
-		console.log(postImgData)
-		event.preventDefault();
+	const getBase64 = file => {
+    return new Promise(resolve => {
+      let fileInfo;
+      let baseURL = "";
+      // Make new FileReader
+      let reader = new FileReader();
 
-	}
+      // Convert the file to base64 text
+      reader.readAsDataURL(file);
 
-	const postDataSetter = (base64) => {
-		console.log(base64)
-		setPostImgData(base64)
-	}
+      // on reader load somthing...
+      reader.onload = () => {
+        // Make a fileInfo Object
+        baseURL = reader.result;
+        resolve(baseURL);
+      };
+    });
+  };
+
+  const handleFileInputChange = e => {
+  	let files = Object.values(e.target.files)
+
+  	files.map((val, key) => {
+  		getBase64(val)
+	      .then(result => {
+	        setPostImgData(postImgData => [...postImgData, result])
+	      })
+	      .catch(err => {
+	        console.log(err);
+	      });
+  	})
+  };
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
-				<FileBase 
-					multiple={true}
-					onDone={(base64) => postDataSetter(base64)}
-				/>
-				<input type="submit" name="" id="" />
+			<form>
+				<input type="file" multiple accept="image/*" name="file" onChange={handleFileInputChange} />
 			</form>
 
-				{postImgData.map((val, key) => {
+			{postImgData.map((val, key) => {
 					return (
 						<div key={key}>
-							<img src={`${val.base64}`} alt="" />
+							<img src={`${val}`} alt="" />
 						</div>
 					)
 				})}
