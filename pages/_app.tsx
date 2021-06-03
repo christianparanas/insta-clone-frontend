@@ -4,6 +4,7 @@ import '../styles/globals.scss'
 import '../styles/client/home.scss'
 import '../styles/client/nav.scss'
 import '../styles/client/post.scss'
+import '../styles/client/create.scss'
 import '../styles/client/storyBtn.scss'
 import '../styles/client/auth.scss'
 

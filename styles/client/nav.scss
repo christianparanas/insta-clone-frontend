@@ -54,6 +54,14 @@
 		background: #fff;
 		z-index: 20; 
 
+		.upload_img_btn {
+			display: none;
+		}
+
+		.upload_img_btn::-webkit-file-upload-button {
+    	display: none; 
+    }
+
 
     .nav_bottom_btn {
     	width: 100%;
