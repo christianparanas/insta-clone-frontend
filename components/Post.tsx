@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-
+import postData from "../store/postdata"
 
 export default function Post({ props }) {
 	const { user_name, user_img, post_imgs, post_likes } = props;
+	const { images, updateImgState } = postData()
 
 	return (
 		<>
