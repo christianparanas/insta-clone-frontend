@@ -3,7 +3,7 @@ import create from 'zustand'
 const postData = create(set => ({
   images: [],
   caption: '',
-  updateImgState: (data) => set(state => ({
+  updateImgState: (data: string[]) => set(state => ({
     images: data
   }))
 }))
