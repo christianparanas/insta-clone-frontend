@@ -9,7 +9,7 @@ export default function create() {
 	const getBase64 = file => {
     return new Promise(resolve => {
       let fileInfo;
-      let baseURL = "";
+      let baseURL: string = "";
       // Make new FileReader
       let reader = new FileReader();
 
@@ -19,7 +19,7 @@ export default function create() {
       // on reader load somthing...
       reader.onload = () => {
         // Make a fileInfo Object
-        baseURL = reader.result;
+        baseURL = reader.result as string;
         resolve(baseURL);
       };
     });
