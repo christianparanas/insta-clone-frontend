@@ -1,9 +1,15 @@
 import create from 'zustand'
 
-const postData = create(set => ({
+type postStateTypes = {
+  images: string[],
+  caption: string,
+  updateImgState: (data: string[]) => void 
+}
+
+const postData = create<postStateTypes>(set => ({
   images: [],
   caption: '',
-  updateImgState: (data: string[]) => set(state => ({
+  updateImgState: (data) => set(state => ({
     images: data
   }))
 }))
