@@ -10,22 +10,9 @@ export default function create() {
 
 	const { images, updateImgState } = postData()
 
-
-  const showPostData = () => {
-  	console.log(images)
-  }
-
-  useEffect(() => {
-  	if(images.length == 0) {
-  		router.push('/')
-  	}
-  }, [])
-
   const returnee = () => {
   	router.push('/')
   }
-
-  if(images.length == 0) return null
 
 	return (
 		<div className="create_container">
